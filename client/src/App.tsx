@@ -4,17 +4,39 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import { lazy, Suspense } from "react";
+
+const Services = lazy(() => import("./pages/Services"));
+const Portfolio = lazy(() => import("./pages/Portfolio"));
+const Demos = lazy(() => import("./pages/Demos"));
+const About = lazy(() => import("./pages/About"));
+const Blog = lazy(() => import("./pages/Blog"));
+const Contact = lazy(() => import("./pages/Contact"));
 
 function Router() {
-  // make sure to consider if you need authentication for certain routes
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+    <div className="flex flex-col min-h-screen">
+      <Navigation />
+      <main className="flex-1">
+        <Suspense fallback={<div className="container py-8">Loading...</div>}>
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/services" component={Services} />
+            <Route path="/portfolio" component={Portfolio} />
+            <Route path="/demos" component={Demos} />
+            <Route path="/about" component={About} />
+            <Route path="/blog" component={Blog} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/404" component={NotFound} />
+            <Route component={NotFound} />
+          </Switch>
+        </Suspense>
+      </main>
+      <Footer />
+    </div>
   );
 }
 
