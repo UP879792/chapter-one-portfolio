@@ -1,4 +1,4 @@
-import { APP_TITLE } from "@/const";
+const LOGO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/97686570/hLGvNJaaBjQJCwPW.png";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import { Link } from "wouter";
 
@@ -11,7 +11,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-lg font-semibold mb-4">{APP_TITLE}</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={LOGO_URL} alt="ChapterOne Logo" className="h-10 w-auto" />
+              <h3 className="text-lg font-semibold">ChapterOne</h3>
+            </div>
             <p className="text-sm text-muted-foreground mb-4">
               Building digital experiences that drive business growth. We
               specialize in custom web applications, booking systems, and
@@ -115,7 +118,7 @@ export default function Footer() {
 
         <div className="mt-8 pt-8 border-t border-border">
           <p className="text-sm text-muted-foreground text-center">
-            © {currentYear} {APP_TITLE}. All rights reserved.
+            © {currentYear} ChapterOne - Web Development Agency. All rights reserved.
           </p>
         </div>
       </div>

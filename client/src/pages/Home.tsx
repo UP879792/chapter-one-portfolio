@@ -54,14 +54,14 @@ export default function Home() {
       <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/30 py-20 md:py-32">
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-6 text-foreground">
+            <h1 className="mb-6 text-foreground animate-fade-in">
               Building Digital Experiences That Drive Business Growth
             </h1>
-            <p className="mb-8 text-lg text-muted-foreground md:text-xl">
+            <p className="mb-8 text-lg text-muted-foreground md:text-xl animate-fade-in animate-delay-100">
               We create custom web applications, booking systems, and analytics dashboards
               that transform how businesses operate and engage with their customers.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animate-delay-200">
               <Link href="/contact">
                 <Button size="lg" className="w-full sm:w-auto">
                   Start Your Project
@@ -90,7 +90,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
-              <Card key={index} className="border-border hover:border-primary transition-colors">
+              <Card key={index} className="border-border hover:border-primary transition-all hover-lift animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardHeader>
                   <div className="mb-4 inline-flex p-3 rounded-lg bg-primary/10">
                     <service.icon className="h-6 w-6 text-primary" />
@@ -190,7 +190,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredWork.map((project, index) => (
-              <Card key={index} className="overflow-hidden border-border hover:shadow-lg transition-shadow">
+              <Card key={index} className="overflow-hidden border-border hover:shadow-lg transition-all hover-lift animate-slide-up" style={{ animationDelay: `${index * 0.15}s` }}>
                 <div className="aspect-video bg-muted relative overflow-hidden">
                   <img
                     src={project.image}

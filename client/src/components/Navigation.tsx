@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { APP_LOGO, APP_TITLE } from "@/const";
+
+const LOGO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/97686570/hLGvNJaaBjQJCwPW.png";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
@@ -22,12 +23,10 @@ export default function Navigation() {
     <nav className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/">
-          <div className="flex items-center gap-2 cursor-pointer">
-            {APP_LOGO && (
-              <img src={APP_LOGO} alt={APP_TITLE} className="h-8 w-auto" />
-            )}
-            <span className="text-xl font-bold text-foreground">
-              {APP_TITLE}
+          <div className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity">
+            <img src={LOGO_URL} alt="ChapterOne Logo" className="h-10 w-auto" />
+            <span className="text-lg font-bold text-foreground hidden sm:inline">
+              ChapterOne
             </span>
           </div>
         </Link>
