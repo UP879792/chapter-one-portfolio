@@ -103,10 +103,10 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:hello@chapterone.dev"
+                  href="mailto:welearnfy@gmail.com"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  hello@chapterone.dev
+                  welearnfy@gmail.com
                 </a>
               </li>
             </ul>

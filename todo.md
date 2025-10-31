@@ -30,3 +30,14 @@
 - [x] Analytics integration tracking
 - [x] Newsletter signup functionality
 - [x] Social media links in footer
+
+
+## Logo Update
+- [x] Add custom Chapter One logo to project
+- [x] Configure logo in environment variables (user needs to update via Settings UI)
+- [ ] Verify logo displays correctly across all pages
+
+
+## Email Update
+- [x] Update contact email to welearnfy@gmail.com in Footer component
+- [x] Update contact email to welearnfy@gmail.com in Contact page

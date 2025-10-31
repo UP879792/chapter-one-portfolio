@@ -112,8 +112,8 @@ export default function Contact() {
                   <CardTitle className="text-lg">Email</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <a href="mailto:hello@chapterone.dev" className="text-muted-foreground hover:text-primary">
-                    hello@chapterone.dev
+                  <a href="mailto:welearnfy@gmail.com" className="text-muted-foreground hover:text-primary">
+                    welearnfy@gmail.com
                   </a>
                 </CardContent>
               </Card>
