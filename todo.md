@@ -107,3 +107,8 @@
 - [x] Update Navigation component with new logo URL
 - [x] Update Footer component with new logo URL
 - [x] Verify new logo displays correctly across all pages
+
+
+## Remove Text from Navigation
+- [x] Remove "ChapterOne" text span from Navigation component
+- [x] Keep only the logo image in the header

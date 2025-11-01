@@ -59,14 +59,11 @@ export default function Navigation() {
       <div className="container flex h-16 items-center justify-between">
         <Link href="/">
           <motion.div
-            className="flex items-center gap-3 cursor-pointer"
+            className="cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <img src={LOGO_URL} alt="ChapterOne Logo" className="h-14 w-auto" />
-            <span className="text-lg font-bold text-foreground hidden sm:inline">
-              ChapterOne
-            </span>
           </motion.div>
         </Link>
 
