@@ -126,7 +126,7 @@ export default function Contact() {
                   <CardTitle className="text-lg">Phone</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                  <a href="tel:+447440238312" className="text-muted-foreground hover:text-primary">+44 7440 238312</a>
                 </CardContent>
               </Card>
 

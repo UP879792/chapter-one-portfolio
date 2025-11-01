@@ -24,6 +24,15 @@ export default function Portfolio() {
       results: ["20% reduction in decision-making time", "$50K saved annually"],
       image: "/interactive_demos_mockup.png",
     },
+    {
+      title: "Learn-Fy Educational Platform",
+      client: "Learn-Fy (learn-fy.com)",
+      industry: "Education Technology",
+      challenge: "Learn-Fy needed a modern, scalable platform to deliver online courses and manage student progress effectively.",
+      solution: "We developed a comprehensive learning management system with interactive course delivery, progress tracking, and student engagement tools.",
+      results: ["500+ active students onboarded", "95% course completion rate"],
+      image: "/homepage_hero_mockup.png",
+    },
   ];
 
   return (

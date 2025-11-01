@@ -112,6 +112,14 @@ export default function Footer() {
                   welearnfy@gmail.com
                 </a>
               </li>
+              <li>
+                <a
+                  href="tel:+447440238312"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  +44 7440 238312
+                </a>
+              </li>
             </ul>
           </div>
         </div>

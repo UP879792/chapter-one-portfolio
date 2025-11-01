@@ -69,3 +69,9 @@
 - [x] Improve navigation spacing and layout on tablets
 - [x] Add sticky navigation on scroll
 - [x] Ensure touch-friendly tap targets on mobile
+
+
+## Portfolio & Contact Updates
+- [x] Add learn-fy.com as a portfolio case study
+- [x] Update phone number to +447440238312 in Contact page
+- [x] Update phone number to +447440238312 in Footer
