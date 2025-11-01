@@ -100,3 +100,10 @@
 - [x] Crop logo image to remove excess whitespace
 - [x] Upload optimized logo and update URL
 - [x] Verify cropped logo displays correctly
+
+
+## New Logo Design
+- [x] Upload new ChapterOne logo (text + infinity symbol)
+- [x] Update Navigation component with new logo URL
+- [x] Update Footer component with new logo URL
+- [x] Verify new logo displays correctly across all pages

@@ -1,4 +1,4 @@
-const LOGO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/97686570/mLjaJyzyvFtldIvD.png";
+const LOGO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/97686570/RAAQoctVKWrBTSEQ.png";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import { Link } from "wouter";
 

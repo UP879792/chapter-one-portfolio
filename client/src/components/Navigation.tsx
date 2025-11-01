@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 
-const LOGO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/97686570/mLjaJyzyvFtldIvD.png";
+const LOGO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/97686570/RAAQoctVKWrBTSEQ.png";
 
 export default function Navigation() {
   const [location] = useLocation();
