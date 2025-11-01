@@ -81,3 +81,10 @@
 - [x] Capture screenshot of learn-fy.com
 - [x] Save screenshot to project public directory
 - [x] Update Learn-Fy portfolio card to use the screenshot
+
+
+## Portfolio Card Hover Effects
+- [x] Design and implement overlay reveal animation on hover
+- [x] Add smooth transitions for image zoom and overlay fade
+- [x] Display additional project details on hover (tech stack, duration, etc.)
+- [x] Ensure hover effects work well on tablets and desktops
