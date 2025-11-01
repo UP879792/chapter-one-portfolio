@@ -52,3 +52,12 @@
 - [x] Add smooth scroll behavior
 - [x] Improve mobile responsiveness
 - [x] Add loading states and skeleton screens where appropriate
+
+
+## Advanced Animations & Parallax
+- [x] Install and configure framer-motion for advanced animations
+- [x] Add parallax scrolling to hero section background
+- [x] Implement scroll-triggered fade-in animations for sections
+- [x] Add stagger animations for card grids
+- [x] Create smooth page transitions
+- [x] Add parallax effect to featured images

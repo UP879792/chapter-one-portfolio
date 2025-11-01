@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
@@ -42,7 +43,14 @@ export default function Portfolio() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {caseStudies.map((study, index) => (
-              <Card key={index} className="overflow-hidden border-border hover:shadow-lg transition-shadow">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+              >
+                <Card className="overflow-hidden border-border hover:shadow-lg transition-all hover-lift h-full">
                 <div className="aspect-video bg-muted relative overflow-hidden">
                   <img src={study.image} alt={study.title} className="object-cover w-full h-full" />
                 </div>
@@ -62,7 +70,8 @@ export default function Portfolio() {
                     ))}
                   </div>
                 </CardContent>
-              </Card>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
