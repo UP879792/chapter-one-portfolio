@@ -88,3 +88,9 @@
 - [x] Add smooth transitions for image zoom and overlay fade
 - [x] Display additional project details on hover (tech stack, duration, etc.)
 - [x] Ensure hover effects work well on tablets and desktops
+
+
+## Logo Size Improvements
+- [x] Increase logo size in navigation header
+- [x] Increase logo size in footer
+- [x] Ensure logo scales properly on mobile devices

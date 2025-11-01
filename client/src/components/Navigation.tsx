@@ -63,7 +63,7 @@ export default function Navigation() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <img src={LOGO_URL} alt="ChapterOne Logo" className="h-10 w-auto" />
+            <img src={LOGO_URL} alt="ChapterOne Logo" className="h-14 w-auto" />
             <span className="text-lg font-bold text-foreground hidden sm:inline">
               ChapterOne
             </span>

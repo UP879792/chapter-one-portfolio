@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <img src={LOGO_URL} alt="ChapterOne Logo" className="h-10 w-auto" />
+              <img src={LOGO_URL} alt="ChapterOne Logo" className="h-12 w-auto mb-2" />
               <h3 className="text-lg font-semibold">ChapterOne</h3>
             </div>
             <p className="text-sm text-muted-foreground mb-4">
