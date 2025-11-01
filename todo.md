@@ -75,3 +75,9 @@
 - [x] Add learn-fy.com as a portfolio case study
 - [x] Update phone number to +447440238312 in Contact page
 - [x] Update phone number to +447440238312 in Footer
+
+
+## Learn-Fy Thumbnail
+- [x] Capture screenshot of learn-fy.com
+- [x] Save screenshot to project public directory
+- [x] Update Learn-Fy portfolio card to use the screenshot
