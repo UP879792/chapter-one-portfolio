@@ -3,19 +3,18 @@
   "buildCommand": "npm run vercel-build",
   "installCommand": "npm install",
   "functions": {
-    "api/index.js": {
-      "runtime": "nodejs20.x",
-      "maxDuration": 30
+    "dist/index.js": {
+      "runtime": "@vercel/node"
     }
   },
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/index.js"
+      "dest": "/dist/index.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/api/index.js"
+      "dest": "/dist/index.js"
     }
   ]
 }
