@@ -16,7 +16,6 @@ vitest.config.ts
 .env*.local
 
 # Build artifacts (will be regenerated)
-dist
 node_modules
 
 # Logs
