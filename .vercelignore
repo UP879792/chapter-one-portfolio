@@ -1,0 +1,38 @@
+# Development
+.git
+.github
+.vscode
+.idea
+.DS_Store
+
+# Tests
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+vitest.config.ts
+
+# Local environment
+.env.local
+.env*.local
+
+# Build artifacts (will be regenerated)
+dist
+node_modules
+
+# Logs
+*.log
+npm-debug.log*
+logs
+
+# Documentation (optional - keep if you want docs deployed)
+# *.md
+# userGuide.md
+
+# Database artifacts
+drizzle/migrations
+
+# Temporary
+tmp
+temp
+*.swp
+*.swo

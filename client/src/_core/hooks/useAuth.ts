@@ -65,6 +65,10 @@ export function useAuth(options?: UseAuthOptions) {
     if (meQuery.isLoading || logoutMutation.isPending) return;
     if (state.user) return;
     if (typeof window === "undefined") return;
+    if (!redirectPath) {
+      console.warn('Cannot redirect: OAuth not configured');
+      return;
+    }
     if (window.location.pathname === redirectPath) return;
 
     window.location.href = redirectPath

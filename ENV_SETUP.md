@@ -6,6 +6,7 @@ Your application requires the following environment variables to be configured i
 
 ### Application Configuration
 - `VITE_APP_ID`: Your application ID from the OAuth provider
+- `VITE_OAUTH_PORTAL_URL`: The OAuth portal URL for login redirects (Required)
 
 ### Database
 - `DATABASE_URL`: MySQL database connection string
@@ -21,6 +22,12 @@ Your application requires the following environment variables to be configured i
 - `BUILT_IN_FORGE_API_URL`: API URL for the notification service
 - `BUILT_IN_FORGE_API_KEY`: API key for the notification service
 
+### Optional Display & Analytics Variables
+- `VITE_APP_TITLE`: Custom application title (defaults to "App")
+- `VITE_APP_LOGO`: Custom logo URL (defaults to placeholder)
+- `VITE_ANALYTICS_ENDPOINT`: Analytics service endpoint
+- `VITE_ANALYTICS_WEBSITE_ID`: Website ID for analytics tracking
+
 ## Setting Environment Variables in Vercel
 
 1. Go to your Vercel project dashboard
@@ -32,12 +39,17 @@ Your application requires the following environment variables to be configured i
 
 ```bash
 VITE_APP_ID=your_app_id_here
+VITE_OAUTH_PORTAL_URL=https://your-oauth-portal.com
 DATABASE_URL=mysql://user:pass@host:3306/dbname
 JWT_SECRET=your_secure_random_jwt_secret_here
 OAUTH_SERVER_URL=https://your-oauth-provider.com
 OWNER_OPEN_ID=admin_openid_value
 BUILT_IN_FORGE_API_URL=https://api.forge.example.com
 BUILT_IN_FORGE_API_KEY=your_api_key_here
+VITE_APP_TITLE=ChapterOne Portfolio
+VITE_APP_LOGO=https://your-domain.com/logo.png
+VITE_ANALYTICS_ENDPOINT=https://analytics.example.com
+VITE_ANALYTICS_WEBSITE_ID=your_website_id
 ```
 
 ## Security Notes
