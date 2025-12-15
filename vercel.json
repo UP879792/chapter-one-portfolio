@@ -1,14 +1,4 @@
 {
   "buildCommand": "npm run vercel-build",
-  "installCommand": "npm install",
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/index"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/api/index"
-    }
-  ]
+  "installCommand": "npm install"
 }
