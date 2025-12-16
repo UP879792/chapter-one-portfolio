@@ -3,7 +3,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { trpc } from "@/lib/trpc";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -15,20 +14,32 @@ export default function Contact() {
     company: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const submitMutation = trpc.contact.submit.useMutation({
-    onSuccess: () => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to submit');
+      }
+
       toast.success("Message sent! We'll get back to you soon.");
       setFormData({ name: "", email: "", company: "", message: "" });
-    },
-    onError: () => {
-      toast.error("Failed to send message. Please try again.");
-    },
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    submitMutation.mutate(formData);
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : 'Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -95,8 +106,8 @@ export default function Contact() {
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       />
                     </div>
-                    <Button type="submit" disabled={submitMutation.isPending}>
-                      {submitMutation.isPending ? "Sending..." : "Send Message"}
+                    <Button type="submit" disabled={isSubmitting}>
+                      {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>
                   </form>
                 </CardContent>

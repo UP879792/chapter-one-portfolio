@@ -3,7 +3,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { trpc } from "@/lib/trpc";
 import { addDays, format, isSameDay, startOfDay } from "date-fns";
 import { Calendar, Check } from "lucide-react";
 import { useState } from "react";
@@ -35,11 +34,39 @@ export default function BookingDemo() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const bookingMutation = trpc.booking.create.useMutation({
-    onSuccess: () => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!selectedService || !selectedDate || !selectedTime || !name || !email) {
+      toast.error("Please fill in all fields");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/booking', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          service: selectedService,
+          date: selectedDate.toISOString(),
+          timeSlot: selectedTime,
+          name,
+          email,
+        })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to create booking');
+      }
+
       setShowSuccess(true);
       toast.success("Booking confirmed! Check your email for details.");
+
       // Reset form after 3 seconds
       setTimeout(() => {
         setShowSuccess(false);
@@ -49,26 +76,11 @@ export default function BookingDemo() {
         setName("");
         setEmail("");
       }, 3000);
-    },
-    onError: () => {
-      toast.error("Failed to create booking. Please try again.");
-    },
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!selectedService || !selectedDate || !selectedTime || !name || !email) {
-      toast.error("Please fill in all fields");
-      return;
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Failed to create booking. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
-
-    bookingMutation.mutate({
-      service: selectedService,
-      date: selectedDate.toISOString(),
-      timeSlot: selectedTime,
-      name,
-      email,
-    });
   };
 
   const disabledDays = [
@@ -201,9 +213,9 @@ export default function BookingDemo() {
               type="submit"
               className="w-full"
               size="lg"
-              disabled={bookingMutation.isPending}
+              disabled={isSubmitting}
             >
-              {bookingMutation.isPending ? "Confirming..." : "Confirm Booking"}
+              {isSubmitting ? "Confirming..." : "Confirm Booking"}
             </Button>
           )}
         </form>
